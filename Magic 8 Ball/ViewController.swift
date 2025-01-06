@@ -11,6 +11,22 @@ import UIKit
 class ViewController: UIViewController {
     
     let ballArray = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainImageView.image = ballArray.first
+    }
 
+    //MARK: Outlets
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    
+    //MARK: Actions
+  
+    
+    @IBAction func askButtonPressed(_ sender: UIButton) {
+        mainImageView.image = ballArray.randomElement()
+    }
+    
 }
 
